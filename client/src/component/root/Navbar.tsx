@@ -11,7 +11,7 @@ const Navbar = () => {
   const emojis = ["🦥", "🧿", "🗿", "🌀", "🛸", "🐌", "🍂", "🕯️", "☄️", "🐈", "🦉"];
 
   return (
-    <div className="fixed shrink-0 w-[5%] h-full">
+    <div className="fixed shrink-0 w-full md:w-[5%] h-[5%] md:h-full pt-5 px-4 md:pt-0 md:px-4">
       <motion.nav
         animate={{
           backgroundColor: currentContent.bg,
@@ -22,9 +22,9 @@ const Navbar = () => {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="w-full bg-[#351010] text-[#FFD6A7] h-full flex flex-col justify-between items-center pb-5 border-r"
+        className="w-full bg-[#351010] text-[#FFD6A7] h-full flex md:flex-col justify-center md:justify-between items-center pb-5 border-r"
       >
-        <button className="border-b border-current h-[10%] w-full flex flex-col justify-center items-center gap-1">
+        <button className="md:border-b border-current w-[10%] h-[10%] md:w-full flex flex-col justify-center items-center gap-1">
           {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
@@ -43,8 +43,12 @@ const Navbar = () => {
           ))}
         </button>
 
-        <div className="h-full w-full flex flex-col justify-center items-center uppercase">
+        <div className="h-full w-full hidden md:flex flex-col justify-center items-center uppercase">
           <VerticleText text={currentContent.section} />
+        </div>
+
+        <div className="h-full w-full flex md:hidden flex-col justify-center items-center uppercase">
+          {currentContent.section}
         </div>
 
         <span className="text-xl hover:cursor-grab">{emojis[Math.floor(Math.random() * emojis.length)]}</span>
