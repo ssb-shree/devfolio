@@ -12,7 +12,7 @@ import { motion } from "motion/react";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 import DynamicText from "../DynamicText";
 
-const socials = [
+export const socials = [
   {
     name: "github",
     link: "https://github.com/ssb-shree",
@@ -42,29 +42,35 @@ const Hero = () => {
       <div className="h-[80%] w-full flex flex-row justify-between items-start py-10">
         <div className="h-full flex justify-start items-start w-[60%]">
           <h1 className={`${titleFont.className} flex flex-col text-9xl uppercase`}>
-            <motion.span
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.22,
-                delay: 0.33,
-              }}
-              className="overflow-hidden"
-            >
-              shree
-            </motion.span>
+            <div className="flex overflow-hidden">
+              {"shree".split("").map((t, i) => (
+                <motion.span
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.33,
+                    delay: 0.22,
+                  }}
+                >
+                  {t}
+                </motion.span>
+              ))}
+            </div>
 
-            <motion.span
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{
-                duration: 0.45,
-                delay: 0.66,
-              }}
-              className="overflow-hidden"
-            >
-              bavachikar
-            </motion.span>
+            <div className="flex overflow-hidden">
+              {"bavachikar".split("").map((t, i) => (
+                <motion.span
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{
+                    duration: 0.33,
+                    delay: 0.22,
+                  }}
+                >
+                  {t}
+                </motion.span>
+              ))}
+            </div>
           </h1>
         </div>
         <div className="h-full flex flex-col justify-start items-start w-[40%] text-lg  p-3 text-orange-200/80">
@@ -76,7 +82,7 @@ const Hero = () => {
               delay: 0.22,
             }}
           >
-            Developer based in{" "}
+            Developer based in
             <span className="underline mr-1 capitalize underline-offset-2 hover:cursor-pointer">mumbai</span>,
           </motion.span>
           <motion.span

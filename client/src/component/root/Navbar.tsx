@@ -10,7 +10,7 @@ const Navbar = () => {
   const { progress, currentContent } = useScrollProgressStore();
 
   return (
-    <div className="fixed shrink-0 w-[5%] h-full">
+    <div className="fixed shrink-0 z-20 w-[5%] h-full">
       <motion.nav
         animate={{
           backgroundColor: currentContent.bg,
@@ -18,8 +18,7 @@ const Navbar = () => {
           borderRightColor: currentContent.border,
         }}
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
+          duration: 0.1,
         }}
         className="w-full bg-[#351010] text-[#FFD6A7] h-full flex md:flex-col justify-center md:justify-between items-center border-r-2"
       >
