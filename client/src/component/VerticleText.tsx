@@ -2,7 +2,7 @@ import React from "react";
 
 const VerticleText = ({ text }: { text: string }) => {
   return (
-    <div className="flex flex-col items-start">
+    <div className="flex flex-col items-center justify-center">
       {text.length > 1 ? text
         .split("")
         .reverse()

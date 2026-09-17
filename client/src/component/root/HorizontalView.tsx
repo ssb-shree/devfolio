@@ -9,12 +9,13 @@ import Projects from "@/component/root/Projects";
 import TechStack from "@/component/root/TechStack";
 import Footer from "@/component/root/Footer";
 import { useScrollProgressStore } from "@/store/scroll";
+import ProgressBar from "./Progress";
 
 export default function HorizontalView() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const { setProgress, setCurrentContent } = useScrollProgressStore();
+  const { progress, currentContent, setProgress, setCurrentContent } = useScrollProgressStore();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -22,6 +23,7 @@ export default function HorizontalView() {
       content: contentRef.current!,
       orientation: "horizontal",
       gestureOrientation: "both",
+      syncTouch: true,
     });
 
     const handleScroll = ({ progress }: { progress: number }) => {
@@ -30,6 +32,7 @@ export default function HorizontalView() {
       const sectionIndex = Math.min(Math.floor(progressPercentage / 25), 4);
 
       setCurrentContent(sectionIndex);
+      setProgress(progress * 100);
     };
 
     lenis.on("scroll", handleScroll);
@@ -50,7 +53,7 @@ export default function HorizontalView() {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="hidden md:flex h-screen w-screen overflow-hidden">
+    <div ref={wrapperRef} className="hidden md:flex flex-col h-screen w-screen overflow-hidden">
       <div ref={contentRef} className="flex h-screen w-screen">
         <Navbar />
         <Hero />
@@ -59,6 +62,7 @@ export default function HorizontalView() {
         <TechStack />
         <Footer />
       </div>
+      <ProgressBar />
     </div>
   );
 }

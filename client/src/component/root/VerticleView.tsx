@@ -24,8 +24,13 @@ const VerticleView = () => {
     const lenis = new Lenis({
       wrapper: wrapperRef.current,
       content: contentRef.current,
+
       orientation: "vertical",
-      gestureOrientation: "both",
+      gestureOrientation: "vertical",
+
+      touchMultiplier: 1,
+      smoothWheel: true,
+      syncTouch: true,
     });
 
     const handleScroll = ({ progress }: { progress: number }) => {
@@ -68,7 +73,9 @@ const VerticleView = () => {
               ease: "easeInOut",
             }}
             className="w-full bg-[#351010] text-[#FFD6A7] h-full flex justify-center items-center border-b"
-          >hello</motion.nav>
+          >
+            hello
+          </motion.nav>
         </div>
         <Hero />
         <About />
