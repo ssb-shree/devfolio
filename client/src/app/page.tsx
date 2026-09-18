@@ -1,3 +1,4 @@
+"use client";
 import HorizontalView from "@/component/root/HorizontalView";
 import VerticleView from "@/component/root/VerticleView";
 

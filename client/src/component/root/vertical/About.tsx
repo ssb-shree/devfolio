@@ -1,5 +1,5 @@
 "use client";
-import { titleFont } from "@/app/layout";
+import { titleFont } from "@/lib/font";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
 import { motion } from "motion/react";
@@ -7,7 +7,6 @@ import { motion } from "motion/react";
 const About = () => {
   return (
     <div className="shrink-0 bg-orange-200 text-[#351010] w-full h-full flex flex-col justify-between items-center py-10 px-4">
-
       {/* 1ST PARENT  */}
       <div className="w-full flex flex-col justify-between items-start pt-20">
         <motion.h1
@@ -40,7 +39,6 @@ const About = () => {
 
         {/* IMAGE  */}
         <div className="w-full h-1/2 flex justify-end">
-
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

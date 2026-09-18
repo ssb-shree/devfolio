@@ -1,6 +1,6 @@
 "use client";
 
-import { titleFont } from "@/app/layout";
+import { titleFont } from "@/lib/font";
 
 import { motion } from "motion/react";
 import { useState } from "react";

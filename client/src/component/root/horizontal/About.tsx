@@ -1,8 +1,10 @@
 "use client";
-import { titleFont } from "@/app/layout";
+import { titleFont } from "@/lib/font";
 import { TypingAnimation } from "@/components/ui/typing-animation";
 
 import { motion } from "motion/react";
+
+
 
 const About = () => {
   return (

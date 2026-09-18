@@ -12,6 +12,7 @@ import TechStack from "@/component/root/horizontal/TechStack";
 import Footer from "@/component/root/horizontal/Footer";
 
 import { useScrollProgressStore } from "@/store/scroll";
+import { SmoothCursor } from "@/components/ui/smooth-cursor";
 
 export default function HorizontalView() {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -56,6 +57,8 @@ export default function HorizontalView() {
 
   return (
     <div ref={wrapperRef} className="hidden xl:flex flex-col h-screen w-screen overflow-hidden">
+      <SmoothCursor />
+
       <div ref={contentRef} className="flex h-screen w-screen">
         <Navbar />
         <Hero />

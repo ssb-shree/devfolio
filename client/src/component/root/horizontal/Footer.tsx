@@ -2,7 +2,8 @@ import { socials } from "./Hero";
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { titleFont } from "@/app/layout";
+import { Michroma } from "next/font/google";
+import { titleFont } from "@/lib/font";
 
 const Footer = () => {
   return (

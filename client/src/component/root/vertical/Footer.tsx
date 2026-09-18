@@ -1,8 +1,9 @@
+import { titleFont } from "@/lib/font";
 import { socials } from "./Hero";
 
 import { motion } from "motion/react";
 import Link from "next/link";
-import { titleFont } from "@/app/layout";
+
 
 const Footer = () => {
   return (

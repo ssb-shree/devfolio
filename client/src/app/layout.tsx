@@ -1,21 +1,6 @@
 import type { Metadata } from "next";
-import { Michroma, Rajdhani, Geist } from "next/font/google";
+import { globalFont } from "@/lib/font";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { SmoothCursor } from "@/components/ui/smooth-cursor";
-
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
-
-const globalFont = Rajdhani({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  weight: "600",
-});
-
-export const titleFont = Michroma({
-  weight: "400",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ssb.is-a.dev"),
@@ -72,11 +57,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={cn("h-full", "antialiased", globalFont.className, "font-sans", geist.variable)}>
-      <body className="">
-        <SmoothCursor />
-        {children}
-      </body>
+    <html lang="en" className={`${globalFont.className}`}>
+      <body className="">{children}</body>
     </html>
   );
 }
