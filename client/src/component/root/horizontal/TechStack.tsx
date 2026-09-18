@@ -19,9 +19,11 @@ import {
 
 import { BsTypescript } from "react-icons/bs";
 import { PiComputerTowerFill } from "react-icons/pi";
-import { ReactNode, useState } from "react";
 import { CiCloudOn } from "react-icons/ci";
+import { TbBrandSocketIo } from "react-icons/tb";
+import { SiMongodb } from "react-icons/si";
 
+import { ReactNode, useState } from "react";
 import { motion } from "motion/react";
 
 type TechStackType = {
@@ -37,9 +39,9 @@ const techStack: TechStackType[] = [
     category: "languages",
     items: [
       { name: "JavaScript", icon: <FaJs size={40} /> },
+      { name: "TypeScript", icon: <BsTypescript size={40} /> },
       { name: "Python", icon: <FaPython size={40} /> },
       { name: "SQL", icon: <FaDatabase size={40} /> },
-      { name: "TypeScript", icon: <BsTypescript size={40} /> },
       { name: "Java", icon: <FaJava size={40} /> },
       { name: "Go", icon: <FaCode size={40} /> },
     ],
@@ -52,7 +54,8 @@ const techStack: TechStackType[] = [
       { name: "Node.js", icon: <FaNodeJs size={40} /> },
       { name: "Express", icon: <FaNodeJs size={40} /> },
       { name: "Bun.js", icon: <FaGolang size={40} /> },
-      { name: "MongoDB", icon: <FaDatabase size={40} /> },
+      { name: "MongoDB", icon: <SiMongodb size={40} /> },
+      { name: "Socket.io", icon: <TbBrandSocketIo size={40} /> },
     ],
   },
   {
@@ -66,19 +69,19 @@ const techStack: TechStackType[] = [
   {
     category: "coursework",
     items: [
-      { name: "AIML", icon: <FaRobot size={40} /> },
-      { name: "Data Structures", icon: <FaCode size={40} /> },
       { name: "DBMS", icon: <FaDatabase size={40} /> },
+      { name: "System Design", icon: <FaCode size={40} /> },
+      { name: "Data Structures", icon: <FaCode size={40} /> },
       { name: "Operating Systems", icon: <PiComputerTowerFill size={40} /> },
       { name: "Computer Networks", icon: <CiCloudOn size={40} /> },
-      { name: "System Design", icon: <FaCode size={40} /> },
+      { name: "AIML", icon: <FaRobot size={40} /> },
     ],
   },
 ];
 
 const TechStack = () => {
   return (
-    <div className="shrink-0 techstack text-[#56041a] bg-[#E21438] min-w-full h-full flex flex-col justify-center items-center py-5 px-20">
+    <div className="shrink-0 techstack text-[#56041a] bg-[#FFD6A7] min-w-full h-full flex flex-col justify-center items-center py-5 px-20">
       <div className="w-full h-[30%] flex flex-row justify-center items-center px-5">
         <h1 className={`${titleFont.className} text-5xl uppercase`}>
           <span>techstack</span>

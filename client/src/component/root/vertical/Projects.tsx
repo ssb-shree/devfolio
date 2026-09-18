@@ -4,7 +4,6 @@ import { titleFont } from "@/app/layout";
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import { FaArrowLeft } from "react-icons/fa6";
 
 const containerVariants = {
   hidden: {},
@@ -31,13 +30,13 @@ const rowVariants = {
   },
 };
 
+const projects = ["Ojus Cultural Fest", "TeamType Webapp", "Masc Webapp", "Dsa Webapp", "Extra"];
 const Projects = () => {
-  const projects = ["Ojus", "TeamType", "Programiz", "Portfolio"];
   const [select, setSelect] = useState<string | null>(null);
   return (
-    <div className="shrink-0 projects bg-[#56041a] text-[#E21438] min-w-full h-full flex justify-center items-center p-5 gap-x-10">
-      <div className=" w-[35%] h-full flex flex-col justify-between items-center">
-        <div className="h-full w-full py-10">
+    <div className="shrink-0 projects bg-[#351010] text-[#FFD6A7] min-w-full h-full flex flex-col justify-center items-center p-5 gap-x-10">
+      <div className="w-full h-full flex flex-col justify-start items-center">
+        <div className=" w-full pt-15">
           <motion.p
             initial={{ y: 10, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -45,21 +44,22 @@ const Projects = () => {
             transition={{
               duration: 1,
             }}
-            className={`${titleFont.className} text-2xl uppercase`}
+            className={`${titleFont.className} text-xl uppercase`}
           >
             Explore Projects
           </motion.p>
         </div>
-        <div className="border border-current h-[70%] w-full flex justify-center items-center">
+
+        <div className="border border-current h-[50%] lg:h-full mt-15 w-full flex justify-start items-center">
           {select && `${select} Image`}
         </div>
       </div>
-      <div className=" w-[40%] h-full py-10 flex flex-col justify-between">
-        <h1 className={`${titleFont.className} text-lg uppercase text-right w-full`}>selected work</h1>
+
+      <div className="w-full h-full py-2 lg:pt-20 flex flex-col justify-between">
         <motion.div
           variants={containerVariants}
           viewport={{ once: true, amount: 0.15 }}
-          className="flex flex-col text-6xl font-bold "
+          className="flex flex-col text-2xl font-bold "
         >
           {projects.map((project, index) => (
             <motion.div
@@ -90,7 +90,7 @@ const Projects = () => {
                   }}
                   onMouseEnter={() => setSelect(project)}
                   onMouseLeave={() => setSelect(null)}
-                  className="flex flex-row gap-x-5 w-full leading-tight text-7xl uppercase select-none"
+                  className="flex flex-row gap-x-5 w-full leading-tight text-4xl lg:text-6xl uppercase select-none"
                 >
                   {project}
                 </motion.h2>
@@ -112,7 +112,9 @@ const Projects = () => {
           ))}
         </motion.div>
 
-        <p className="text-lg">Most of what I learn comes from building. Here's some of what I've built.</p>
+        <p className="text-lg lg:text-2xl flex flex-col w-full text-right">
+          <span>Most of what I learn comes from building.</span> <span>Here's some of what I've built.</span>
+        </p>
       </div>
     </div>
   );

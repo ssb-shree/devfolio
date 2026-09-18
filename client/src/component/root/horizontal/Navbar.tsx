@@ -2,9 +2,10 @@
 
 import { motion } from "motion/react";
 
-import VerticleText from "../VerticleText";
+import VerticleText from "../../VerticleText";
 import { useScrollProgressStore } from "@/store/scroll";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { FaCode } from "react-icons/fa6";
 
 const Navbar = () => {
   const { progress, currentContent } = useScrollProgressStore();
@@ -20,10 +21,10 @@ const Navbar = () => {
         transition={{
           duration: 0.1,
         }}
-        className="w-full bg-[#351010] text-[#FFD6A7] h-full flex md:flex-col justify-center md:justify-between items-center border-r-2"
+        className="w-full bg-[#351010] text-[#FFD6A7] h-full flex md:flex-col justify-center md:justify-between items-center border-current border-r-2 border-y-2"
       >
         <button className="border-b-2 border-current w-[10%] h-[10%] md:w-full flex flex-col justify-center items-center gap-1">
-          {[0, 1, 2].map((i) => (
+          {/* {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
               initial={{ scaleX: 0 }}
@@ -38,7 +39,22 @@ const Navbar = () => {
               }}
               className="w-[60%] h-0.5 mt-0.5 origin-left"
             />
-          ))}
+          ))} */}
+
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{
+              scaleX: 1,
+            }}
+            transition={{
+              duration: 0.45,
+              delay: 0.33,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className=""
+          >
+            <FaCode size={30} />
+          </motion.div>
         </button>
 
         <motion.div

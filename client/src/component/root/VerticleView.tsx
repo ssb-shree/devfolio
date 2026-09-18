@@ -4,13 +4,13 @@ import { useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { motion } from "motion/react";
 
-import Hero from "@/component/root/Hero";
-import About from "@/component/root/About";
-import Projects from "@/component/root/Projects";
-import TechStack from "@/component/root/TechStack";
-import Footer from "@/component/root/Footer";
-
 import { useScrollProgressStore } from "@/store/scroll";
+import Navbar from "./vertical/Navbar";
+import Hero from "./vertical/Hero";
+import About from "./vertical/About";
+import Projects from "./vertical/Projects";
+import TechStack from "./vertical/TechStack";
+import Footer from "./vertical/Footer";
 
 const VerticleView = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -59,24 +59,9 @@ const VerticleView = () => {
   }, [setProgress, setCurrentContent]);
 
   return (
-    <div ref={wrapperRef} className="md:hidden h-screen w-screen overflow-hidden">
+    <div ref={wrapperRef} className="xl:hidden h-screen w-screen overflow-hidden">
       <div ref={contentRef} className="h-full w-full flex flex-col">
-        <div className="fixed top-0 shrink-0 w-full h-[10%]">
-          <motion.nav
-            animate={{
-              backgroundColor: currentContent.bg,
-              color: currentContent.text,
-              borderRightColor: currentContent.border,
-            }}
-            transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-            }}
-            className="w-full bg-[#351010] text-[#FFD6A7] h-full flex justify-center items-center border-b"
-          >
-            hello
-          </motion.nav>
-        </div>
+        <Navbar />
         <Hero />
         <About />
         <Projects />

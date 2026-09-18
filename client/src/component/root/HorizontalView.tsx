@@ -1,21 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import Lenis from "lenis";
-import Navbar from "@/component/root/Navbar";
-import Hero from "@/component/root/Hero";
-import About from "@/component/root/About";
-import Projects from "@/component/root/Projects";
-import TechStack from "@/component/root/TechStack";
-import Footer from "@/component/root/Footer";
+
+import Navbar from "@/component/root/horizontal/Navbar";
+import ProgressBar from "./horizontal/Progress";
+import Hero from "@/component/root/horizontal/Hero";
+import About from "@/component/root/horizontal/About";
+import Projects from "@/component/root/horizontal/Projects";
+import TechStack from "@/component/root/horizontal/TechStack";
+import Footer from "@/component/root/horizontal/Footer";
+
 import { useScrollProgressStore } from "@/store/scroll";
-import ProgressBar from "./Progress";
 
 export default function HorizontalView() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
-  const { progress, currentContent, setProgress, setCurrentContent } = useScrollProgressStore();
+  const { setProgress, setCurrentContent } = useScrollProgressStore();
 
   useEffect(() => {
     const lenis = new Lenis({
@@ -53,7 +55,7 @@ export default function HorizontalView() {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="hidden md:flex flex-col h-screen w-screen overflow-hidden">
+    <div ref={wrapperRef} className="hidden xl:flex flex-col h-screen w-screen overflow-hidden">
       <div ref={contentRef} className="flex h-screen w-screen">
         <Navbar />
         <Hero />

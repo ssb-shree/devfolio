@@ -9,8 +9,7 @@ import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 
 import { motion } from "motion/react";
-import { TypingAnimation } from "@/components/ui/typing-animation";
-import DynamicText from "../DynamicText";
+import DynamicText from "@/component/DynamicText";
 
 export const socials = [
   {
@@ -37,11 +36,11 @@ const Hero = () => {
   return (
     <div
       ref={parentRef}
-      className="shrink-0 md:ml-[5%] text-orange-200 bg-[#351010] w-[95%] h-full flex flex-col justify-center items-start p-3"
+      className="shrink-0 text-orange-200 bg-[#351010] w-full h-full flex flex-col justify-center items-start px-5 overflow-x-hidden"
     >
-      <div className="h-[80%] w-full flex flex-row justify-between items-start py-10">
-        <div className="h-full flex justify-start items-start w-[60%]">
-          <h1 className={`${titleFont.className} flex flex-col text-9xl uppercase`}>
+      <div className="h-[80%] w-full flex flex-col justify-between items-start py-10">
+        <div className="h-full flex justify-start items-start">
+          <h1 className={`${titleFont.className} flex flex-col text-4xl lg:text-8xl uppercase pt-20`}>
             <div className="flex overflow-hidden">
               {"shree".split("").map((t, i) => (
                 <motion.span
@@ -73,7 +72,7 @@ const Hero = () => {
             </div>
           </h1>
         </div>
-        <div className="h-full flex flex-col justify-start items-start w-[40%] text-lg  p-3 text-orange-200/80">
+        <div className="h-full flex flex-col justify-start items-start w-full text-xl lg:text-4xl text-orange-200/80">
           <motion.span
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -83,7 +82,7 @@ const Hero = () => {
             }}
           >
             Developer based in
-            <span className="underline mr-1 capitalize underline-offset-2 hover:cursor-pointer">mumbai</span>,
+            <span className="underline mx-1 capitalize underline-offset-2 hover:cursor-pointer">Mumbai</span>,
           </motion.span>
           <motion.span
             initial={{ y: 20, opacity: 0 }}
@@ -99,8 +98,10 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="h-[20%] w-full flex flex-row text-xl text-orange-200/80">
-        <DynamicText />
+      <div className="h-[20%] w-full flex flex-col lg:flex-row text-xl lg:text-3xl text-orange-200/80">
+        <div className="hidden h-full w-full lg:flex justify-start items-center">
+          <DynamicText />
+        </div>
         <div className="h-full w-full flex justify-start items-center text-left">
           <Link
             href={"https://www.linkedin.com/in/sde-shree/"}

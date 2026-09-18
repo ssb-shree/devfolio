@@ -15,7 +15,7 @@ export default function DynamicText() {
       }}
       className="h-full w-full flex justify-start items-center uppercase"
     >
-      <TypingAnimation showCursor={false} loop as="span" words={["software", "engineer", "developer"]} />
+      <TypingAnimation showCursor={false} loop as="span" words={["software", "developer", "engineer"]} />
     </motion.div>
   );
 }

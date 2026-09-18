@@ -1,14 +1,12 @@
-import React from "react";
 import { socials } from "./Hero";
 
 import { motion } from "motion/react";
 import Link from "next/link";
 import { titleFont } from "@/app/layout";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Footer = () => {
   return (
-    <div className="bg-slate-200 shrink-0 h-full w-full flex flex-col p-5 pl-20 justify-center items-center">
+    <div className="bg-[#351010] text-[#FFD6A7] shrink-0 h-full w-full flex flex-col p-5 pl-20 justify-center items-center">
       <div className=" w-full h-[70%] flex flex-row justify-center items-center">
         <div className=" h-full w-[70%] p-5 flex flex-col">
           <span>Contact At</span>

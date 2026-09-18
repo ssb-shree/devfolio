@@ -29,22 +29,22 @@ export const sections: SectionOptions[] = [
     border: "#351010",
   },
   {
-    section: "projects",
-    bg: "#56041A",
-    text: "#E21438",
-    border: "#BC7A35",
+    section: "hero",
+    bg: "#351010",
+    text: "#FFD6A7",
+    border: "#FFD6A7",
   },
   {
-    section: "techstack",
-    bg: "#E21438",
-    text: "#56041A",
-    border: "#1D3026",
+    section: "about",
+    bg: "#FFD6A7",
+    text: "#351010",
+    border: "#351010",
   },
   {
     section: "footer",
-    bg: "#E2E8F0",
-    text: "#000000",
-    border: "#000000",
+    bg: "#351010",
+    text: "#FFD6A7",
+    border: "#FFD6A7",
   },
 ];
 
